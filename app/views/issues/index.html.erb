@@ -1,0 +1,8 @@
+<%= @issues.each do |issue| %>
+  <table>
+    <tr>
+      <td><%= issue.summary %></td>
+      <td><%= issue.description %></td>
+    </tr>
+  </table>
+<% end %>
