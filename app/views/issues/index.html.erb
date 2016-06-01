@@ -1,8 +1,10 @@
-<%= @issues.each do |issue| %>
-  <table>
+<%= link_to "Create", new_issue_path %>
+
+<table>
+  <% @issues.each do |issue| %>
     <tr>
       <td><%= issue.summary %></td>
       <td><%= issue.description %></td>
     </tr>
-  </table>
-<% end %>
+  <% end %>
+</table>

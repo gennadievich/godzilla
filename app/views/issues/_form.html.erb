@@ -1,0 +1,10 @@
+<%= form_for @issue do |f| %>
+  <%= f.select :type_id, [['New Feature', 1]] %>
+  <%= f.text_field :summary %>
+  <%= f.text_area :description %>
+  <%= f.select :priority_id, [['Medium', 1]] %>
+  <%= f.text_field :estimate_time %>
+  <%= f.select :sprint_id, [['Sprint 1', 1]] %>
+
+  <%= f.submit "Create" %>
+<% end %>
