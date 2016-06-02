@@ -1,10 +1,88 @@
-<%= form_for @issue do |f| %>
-  <%= f.select :type_id, [['New Feature', 1]] %>
-  <%= f.text_field :summary %>
-  <%= f.text_area :description %>
-  <%= f.select :priority_id, [['Medium', 1]] %>
-  <%= f.text_field :estimate_time %>
-  <%= f.select :sprint_id, [['Sprint 1', 1]] %>
+<%= form_for @issue, :html => {:class => 'form-horizontal'} do |f| %>
+  <div class="form-body">
+    <div class="issue-setup-fields">
 
-  <%= f.submit "Create" %>
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+          <%= f.label :project, class: 'col-sm-2 form-label' %>
+          <div class="col-sm-4">
+            <%= f.select :project_id, [['Some project', 1]], {}, {:class => 'form-control'} %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+          <%= f.label :issue_type, class: 'col-sm-2 form-label' %>
+          <div class="col-sm-4">
+            <%= f.select :type_id, [['New Feature', 1]], {}, {:class => 'form-control'} %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="issue-content-fields">
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+          <%= f.label :summary, class: 'col-sm-2 form-label' %>
+          <div class="col-sm-8">
+            <%= f.text_field :summary, {:class => 'form-control'} %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+          <%= f.label :priority, class: 'col-sm-2 form-label' %>
+          <div class="col-sm-4">
+            <%= f.select :priority_id, [['Medium', 1]], {}, {:class => 'form-control'} %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+          <%= f.label :due_date, class: 'col-sm-2 form-label' %>
+          <div class="col-sm-3">
+            <%= f.date_field :due_date, {:class => 'form-control'} %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+          <%= f.label :description, class: 'col-sm-2 form-label' %>
+          <div class="col-sm-9">
+            <%= f.text_area :description, rows: 6, :class => 'form-control' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+          <%= f.label :estimate_time, class: 'col-sm-2 form-label' %>
+          <div class="col-sm-2">
+            <%= f.text_field :estimate_time, {:class => 'form-control'} %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+          <%= f.label :sprint, class: 'col-sm-2 form-label' %>
+          <div class="col-sm-4">
+            <%= f.select :sprint_id, [['Sprint 1', 1]], {}, {:class => 'form-control'} %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  <div class="form-footer">
+    <div class="col-sm-offset-10 col-sm-2">
+      <%= f.submit "Create", class: 'btn btn-primary' %>
+    </div>
+  </div>
 <% end %>
