@@ -6,6 +6,7 @@ class IssuesController < ApplicationController
   def new
     @issue = Issue.new
     @issue_types = IssueType.all
+    @issue_priorities = IssuePriority.all
   end
 
   def create

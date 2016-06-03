@@ -34,7 +34,7 @@
         <div class="col-sm-offset-3 col-sm-9">
           <%= f.label :priority, class: 'col-sm-2 form-label' %>
           <div class="col-sm-4">
-            <%= f.select :priority_id, [['Medium', 1]], {}, {:class => 'form-control'} %>
+            <%= f.select :priority_id, @issue_priorities.sort_by(&:display_order).map{ |p| [p.name, p.id] }, {}, {:class => 'form-control'} %>
           </div>
         </div>
       </div>

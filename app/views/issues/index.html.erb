@@ -2,8 +2,12 @@
   <% @issues.each do |issue| %>
     <div class="issue-box">
       <div class="issue-type-priority-pics">
-        <span class="issue-type"><%= image_tag(issue.issue_type.icon_path) %></span>
-        <span class="issue-priority"><%= issue.priority_id %></span>
+        <span class="issue-type">
+          <%= image_tag(issue.issue_type.icon_path, size: "16x16", title: issue.issue_type.name) %>
+        </span>
+        <span class="issue-priority">
+          <%= image_tag(issue.issue_priority.icon_path, size: "16x16",title: issue.issue_priority.name) %>
+        </span>
       </div>
 
       <div class="issue-data-brief">
@@ -17,7 +21,9 @@
         </div>
       </div>
 
-      <span class="issue-estimate-time" style="float: right"><%= issue.estimate_time %></span>
+      <span class="issue-estimate-time" style="float: right">
+        <%= "#{issue.estimate_time}h" if issue.estimate_time %>
+      </span>
     </div>
   <% end %>
 </div>

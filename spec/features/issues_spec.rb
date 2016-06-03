@@ -4,6 +4,7 @@ feature "Issues" do
 
   before :all do
     create_issue_types
+    create_issue_priorities
   end
 
   scenario "Visit issues index page" do
@@ -59,5 +60,17 @@ feature "Issues" do
     ]
 
     issue_types.each { |type| IssueType.create(name: type[:name], icon_path: type[:icon_path], display_order: type[:display_order]) }
+  end
+
+  def create_issue_priorities
+    issue_priorities = [
+      {name: "Lowest", icon_path: "lowest.svg", display_order: 4},
+      {name: "Low", icon_path: "low.svg", display_order: 3},
+      {name: "Medium", icon_path: "medium.svg", display_order: 0},
+      {name: "High", icon_path: "high.svg", display_order: 2},
+      {name: "Highest", icon_path: "highest.svg", display_order: 1}
+    ]
+
+    issue_priorities.each { |p| IssuePriority.create(name: p[:name], icon_path: p[:icon_path], display_order: p[:display_order]) }
   end
 end
