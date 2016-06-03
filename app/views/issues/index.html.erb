@@ -2,7 +2,7 @@
   <% @issues.each do |issue| %>
     <div class="issue-box">
       <div class="issue-type-priority-pics">
-        <span class="issue-type"><%= issue.type_id %></span>
+        <span class="issue-type"><%= image_tag(issue.issue_type.icon_path) %></span>
         <span class="issue-priority"><%= issue.priority_id %></span>
       </div>
 
