@@ -8,5 +8,6 @@ FactoryGirl.define do
     priority_id 1
     type_id 1
     sprint_id 1
+    project_id 1
   end
 end
