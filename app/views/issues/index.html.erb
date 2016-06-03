@@ -1,19 +1,23 @@
-<%= link_to "Create", new_issue_path %>
-
 <div class="issue-list">
   <% @issues.each do |issue| %>
     <div class="issue-box">
-      <div class="issue-data-row">
+      <div class="issue-type-priority-pics">
         <span class="issue-type"><%= issue.type_id %></span>
         <span class="issue-priority"><%= issue.priority_id %></span>
-        <span class="issue-link"><%= "ToDo Link" %></span>
-        <span class="issue-summary"><%= issue.summary %></span>
-        <span class="issue-estimate-time" style="float: right"><%= issue.estimate_time %></span>
       </div>
 
-      <div class="issue-data-row">
-        <div class="issue-status"><%= "issue.status" %></div>
+      <div class="issue-data-brief">
+        <div class="issue-data-row">
+          <span class="issue-link"><%= "ToDo Link" %></span>
+          <span class="issue-summary"><%= issue.summary %></span>
+        </div>
+
+        <div class="issue-data-row">
+          <div class="issue-status"><%= "issue.status" %></div>
+        </div>
       </div>
+
+      <span class="issue-estimate-time" style="float: right"><%= issue.estimate_time %></span>
     </div>
   <% end %>
 </div>
