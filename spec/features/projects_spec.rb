@@ -1,6 +1,6 @@
 require "spec_helper"
 
-feature "Issues" do
+feature "Projects" do
   scenario "Visit projects index page" do
     project1 = create(:project)
 
