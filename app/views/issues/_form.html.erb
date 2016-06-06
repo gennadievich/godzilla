@@ -5,7 +5,7 @@
         <div class="col-sm-offset-3 col-sm-9">
           <%= f.label :project, class: 'col-sm-2 form-label issue-form-project' %>
           <div class="col-sm-4">
-            <%= f.select :project_id, [['Some project', 1]], {},
+            <%= f.select :project_id, @projects.map{ |p| [p.name, p.id] }, {},
                          {:class => 'form-control'} %>
           </div>
         </div>

@@ -7,6 +7,7 @@ class IssuesController < ApplicationController
     @issue = Issue.new
     @issue_types = IssueType.all
     @issue_priorities = IssuePriority.all
+    @projects = Project.all
   end
 
   def create
@@ -16,7 +17,7 @@ class IssuesController < ApplicationController
       set_issue_defaults(issue)
       redirect_to issues_path
     else
-      raise "Fuck"
+      raise "Fuck issue"
     end
   end
 

@@ -18,10 +18,10 @@ feature "Projects" do
     key = name.capitalize
     url = Faker::Internet.url
 
-    fill_in "name", with: name
-    fill_in "key", with: key
+    fill_in "project_name", with: name
+    fill_in "project_key", with: key
     select "Software", from: "project_type_id"
-    fill_in "url", with: url
+    fill_in "project_url", with: url
 
     click_button "Create"
 

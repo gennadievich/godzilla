@@ -7,9 +7,11 @@ feature "Issues" do
     create_issue_priorities
   end
 
+  let!(:project) { create(:project) }
+
   scenario "Visit issues index page" do
-    issue1 = create(:issue)
-    issue2 = create(:issue)
+    issue1 = create(:issue, project_id: project.id)
+    issue2 = create(:issue, project_id: project.id)
 
     visit issues_path
 
@@ -28,7 +30,7 @@ feature "Issues" do
     description = Faker::Lorem.sentence
     et = 8
 
-    select "Some project", from: "issue_project_id"
+    select project.name, from: "issue_project_id"
     select "New Feature", from: "issue_type_id"
     fill_in "issue_summary", with: summary
     select "Medium", from: "issue_priority_id"
