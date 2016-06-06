@@ -1,5 +1,6 @@
 class IssuesController < ApplicationController
   def index
+    @title = "Backlog"
     @issues = Issue.all
   end
 
