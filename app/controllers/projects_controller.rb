@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   def index
     @title = "Projects"
     @projects = Project.all
+    @project_types = ProjectType.all
   end
 
   def new

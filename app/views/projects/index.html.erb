@@ -1,5 +1,19 @@
-<% @projects.each do |project| %>
-  <%= project.name %>
-  <%= project.key %>
-  <%= project.url %>
-<% end %>
+<div class="projects-box">
+  <div class="project-types-categories">
+    <div class="project-types">
+      <ul>
+        <li><h5>Project types</h5></li>
+        <li><strong><%= link_to "All Project Types" %></strong></li>
+        <% @project_types.each do |type| %>
+          <li>
+            <strong>
+              <%= link_to ("#{image_tag type.icon_path, size: '18x18'}" + " #{type.name}").html_safe %>
+            </strong>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="project-categories">categories</div>
+  </div>
+  <div class="project-list">Project list</div>
+</div>
