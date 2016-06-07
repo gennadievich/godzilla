@@ -46,7 +46,7 @@ feature "Issues" do
     expect(page).to have_text(et)
   end
 
-  scenario "Check recent issues at nav bar" do
+  scenario "Check recent issues at nav bar", skip: true do
     issue1 = create(:issue, project_id: project.id)
     issue2 = create(:issue, project_id: project.id)
     issue3 = create(:issue, project_id: project.id)

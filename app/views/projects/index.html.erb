@@ -15,5 +15,11 @@
     </div>
     <div class="project-categories">categories</div>
   </div>
-  <div class="project-list">Project list</div>
+  <div class="project-list">Project list
+    <% @projects.each do |project| %>
+      <%= project.name %>
+      <%= project.key %>
+      <%= project.url %>
+    <% end %>
+  </div>
 </div>
