@@ -1,3 +1,5 @@
 <% get_recent_issues.each do |issue| %>
-  <li><%= link_to issue.summary %></li>
+  <li>
+    <%= link_to ("#{image_tag issue.issue_type.icon_path}" + " #{issue.summary}").html_safe %>
+  </li>
 <% end if get_recent_issues %>

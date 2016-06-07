@@ -7,7 +7,8 @@ feature "Issues" do
     create_issue_priorities
   end
 
-  let!(:project) { create(:project) }
+  let!(:project_type) { create(:project_type) }
+  let!(:project) { create(:project, type_id: project_type.id) }
 
   scenario "Visit issues index page" do
     issue1 = create(:issue, project_id: project.id)

@@ -1,8 +1,10 @@
 require "spec_helper"
 
 feature "Projects" do
+  let!(:project_type) { create(:project_type) }
+
   scenario "Visit projects index page" do
-    project1 = create(:project)
+    project1 = create(:project, type_id: project_type.id)
 
     visit projects_path
 
@@ -20,7 +22,7 @@ feature "Projects" do
 
     fill_in "project_name", with: name
     fill_in "project_key", with: key
-    select "Software", from: "project_type_id"
+    select project_type.name, from: "project_type_id"
     fill_in "project_url", with: url
 
     click_button "Create"

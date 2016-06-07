@@ -22,7 +22,8 @@
       <div class="col-sm-offset-3 col-sm-9">
         <%= f.label :type, class: 'col-sm-2 form-label' %>
         <div class="col-sm-4">
-          <%= f.select :type_id, [["Software", 1]], {}, {:class => 'form-control'} %>
+          <%= f.select :type_id, @project_types.sort_by(&:display_order).map{ |type| [type.name, type.id] }, {},
+                       {:class => 'form-control'} %>
         </div>
       </div>
     </div>
