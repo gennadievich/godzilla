@@ -45,6 +45,19 @@ feature "Issues" do
     expect(page).to have_text(et)
   end
 
+  scenario "Check recent issues at nav bar" do
+    issue1 = create(:issue, project_id: project.id)
+    issue2 = create(:issue, project_id: project.id)
+    issue3 = create(:issue, project_id: project.id)
+    issue4 = create(:issue, project_id: project.id)
+
+    visit projects_path
+
+    expect(page).to have_link(issue4.summary)
+    expect(page).to have_link(issue3.summary)
+    expect(page).to have_link(issue2.summary)
+  end
+
   private
 
   def create_issue_types
