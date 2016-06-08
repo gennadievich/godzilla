@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   resources :issues
   resources :projects
+  get "/projects/filter/:filter_params", to: "projects#index", as: "filter_projects"
 end

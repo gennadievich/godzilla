@@ -14,8 +14,10 @@
 
     <%= render partial: "layouts/header", locals: { title: @title } %>
 
-    <div class="container">
-      <%= yield %>
+    <%= yield %>
+
+    <div class="margin-top-30">
+      <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
 </html>

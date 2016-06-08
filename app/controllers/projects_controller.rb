@@ -3,6 +3,8 @@ class ProjectsController < ApplicationController
     @title = "Projects"
     @projects = Project.all
     @project_types = ProjectType.all
+    @type_filter = "All Project Types" #ToDo filter
+    @category_filter = "All Categories" #ToDo filter
   end
 
   def new

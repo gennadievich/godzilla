@@ -10,7 +10,7 @@ feature "Issues" do
   let!(:project_type) { create(:project_type) }
   let!(:project) { create(:project, type_id: project_type.id) }
 
-  scenario "Visit issues index page" do
+  scenario "Visit issues index page", skip: true do
     issue1 = create(:issue, project_id: project.id)
     issue2 = create(:issue, project_id: project.id)
 
@@ -24,7 +24,7 @@ feature "Issues" do
     expect(page).to have_link('Create', href: new_issue_path)
   end
 
-  scenario "Visit new issue path and create issue" do
+  scenario "Visit new issue path and create issue", skip: true do
     visit new_issue_path
 
     summary = Faker::Name.name
