@@ -1,14 +1,15 @@
 //project-form===========================
 .projects-box
   display: flex
-  margin-top: -1px
   min-height: 300px
+  border: 1px solid #ccc
+  margin-top: -1px
   .project-types-categories
     width: 250px
-    border: 1px solid #ccc
+    border-right: 1px solid #ccc
+    padding-right: 30px
     .project-types, .project-categories
       padding-top: 10px
-      border-bottom: 1px solid #ccc
       ul
         list-style-type: none
         a:link
@@ -26,16 +27,18 @@
             margin-left: -10px
           strong
             color: black
+            &:hover
+              background-color: lightgray
     .project-categories
       padding-top: 10px
   .project-list
     flex: 1
-    border: 1px solid #ccc
-    margin-left: -1px
     h3
       padding-left: 20px
     table
       font-size: 16px
+      .project-icon
+        padding-left: 20px
 
 //project-form===========================
 .project-form-name

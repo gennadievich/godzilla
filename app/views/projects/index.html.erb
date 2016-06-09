@@ -3,11 +3,11 @@
     <div class="project-types">
       <ul>
         <li><h5>Project types</h5></li>
-        <li><strong><%= link_to "All Project Types" %></strong></li>
+        <li><strong><%= link_to "All Project Types", filter_project_path("All Project Types", @category_filter) %></strong></li>
         <% @project_types.each do |type| %>
           <li>
             <strong>
-              <%= link_to ("#{image_tag type.icon_path, size: '18x18'}" + " #{type.name}").html_safe %>
+              <%= link_to ("#{image_tag type.icon_path, size: '18x18'}" + " #{type.name}").html_safe, filter_project_path(type.name, @category_filter) %>
             </strong>
           </li>
         <% end %>
@@ -17,8 +17,8 @@
     <div class="project-categories">
       <ul>
         <li><h5>Categories</h5></li>
-        <li><strong><%= link_to "All categories", filter_projects_path("All Categories") %></strong></li>
-        <li><strong><%= link_to "Recent Projects", filter_projects_path("Recent Projects") %></strong></li>
+        <li><strong><%= link_to "All categories", filter_project_path(@type_filter, "All categories") %></strong></li>
+        <li><strong><%= link_to "Recent Projects", filter_project_path(@type_filter, "Recent Projects") %></strong></li>
       </ul>
     </div>
   </div>
@@ -29,19 +29,19 @@
       <table class="table">
         <thead>
           <tr>
-            <th></th>
-            <th>Project</th>
-            <th>Key</th>
-            <th>Project Type</th>
-            <th>Project Lead</th>
-            <th>Project Category</th>
-            <th>URL</th>
+            <th class="width-3"></th>
+            <th class="col-sm-2">Project</th>
+            <th class="col-sm-1">Key</th>
+            <th class="col-sm-2">Project Type</th>
+            <th class="col-sm-2">Project Lead</th>
+            <th class="col-sm-2">Project Category</th>
+            <th class="col-sm-2">URL</th>
           </tr>
         </thead>
 
         <% @projects.each do |project| %>
           <tr>
-            <td></td>
+            <td class="project-icon"><%= image_tag "standart_godzilla.png", size: "24x24" %></td>
             <td><%= project.name %></td>
             <td><%= project.key %></td>
             <td><%= ("#{image_tag project.project_type.icon_path, size: '18x18'}" + " #{project.project_type.name}").html_safe %></td>
