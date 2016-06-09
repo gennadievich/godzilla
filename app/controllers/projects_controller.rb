@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   def index
     process_filter_params
     @title = "Projects"
-    @projects = params[:project_category] == "Recent Projects" ? Project.recent : Project.all
+    @projects = params[:project_category] == "Recent Projects" ? Project.recent_projects : Project.all
     @projects = @pt_id ? @projects.where("type_id = ?", @pt_id) : @projects
     @project_types = ProjectType.all
   end

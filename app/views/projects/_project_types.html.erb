@@ -1,5 +1,5 @@
 <% ProjectType.all.each do |type| %>
   <li>
-    <%= link_to ("#{image_tag type.icon_path, size: '16x16'}" + " #{type.name}").html_safe %>
+    <%= link_to ("#{image_tag type.icon_path, size: '16x16'}" + " #{type.name}").html_safe, filter_project_path(type.name, "All Categories") %>
   </li>
 <% end %>
