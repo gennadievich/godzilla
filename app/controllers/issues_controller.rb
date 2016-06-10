@@ -1,7 +1,7 @@
 class IssuesController < ApplicationController
   def index
     @title = "Backlog"
-    @issues = Issue.all
+    @issues = current_project.issues.order("updated_at desc")
   end
 
   def new
@@ -16,7 +16,7 @@ class IssuesController < ApplicationController
 
     if issue.save
       set_issue_defaults(issue)
-      redirect_to issues_path
+      redirect_to project_issues_path(current_project)
     else
       raise "Fuck issue"
     end

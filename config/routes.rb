@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  root :to => "issues#index"
+  root :to => "projects#index"
 
-  resources :issues
-  resources :projects
+  resources :projects do
+    resources :issues
+  end
+
 
   get "/projects/:project_type/:project_category", to: "projects#index", as: "filter_project"
 end

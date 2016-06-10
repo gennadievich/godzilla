@@ -7,4 +7,8 @@ class Project < ApplicationRecord
   def self.recent_projects
     order("updated_at desc").limit(2)
   end
+
+  def self.current_project
+    order("updated_at desc").first
+  end
 end

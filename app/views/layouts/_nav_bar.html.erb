@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <%= link_to "Godzilla", issues_path, class: "navbar-brand" %>
+    <%= link_to "Godzilla", project_issues_path(current_project), class: "navbar-brand" %>
 
     <!--PROJECTS dropdown-->
     <ul class="nav navbar-nav">
@@ -11,7 +11,7 @@
         </a>
         <ul class="dropdown-menu">
           <strong>Current project</strong>
-          <li><a href="#">Current project</a></li>
+          <li><%= link_to ("#{image_tag 'standart_godzilla.png', size: '16x16'} " + current_project.name).html_safe %></li>
           <li role="separator" class="divider"></li>
           <strong>Recent projects</strong>
           <%= render partial: "projects/recent_projects" %>
@@ -34,11 +34,11 @@
           <strong>Recent issues</strong>
           <%= render partial: "issues/recent_issues" %>
           <li role="separator" class="divider"></li>
-          <li><%= link_to "View all issues", issues_path %></li>
+          <li><%= link_to "View all issues", project_issues_path(current_project) %></li>
         </ul>
       </li>
     </ul>
 
-    <%= link_to "Create", new_issue_path, class: "btn btn-default navbar-btn margin-left-10", title: "Create a new Issue" %>
+    <%= link_to "Create", new_project_issue_path(current_project), class: "btn btn-default navbar-btn margin-left-10", title: "Create a new Issue" %>
   </div>
 </nav>
