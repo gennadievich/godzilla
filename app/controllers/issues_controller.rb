@@ -1,6 +1,8 @@
 class IssuesController < ApplicationController
   def index
+    project_id = params[:project_id]
     @title = "Backlog"
+    touch_project(project_id) if project_id
     @issues = current_project.issues.order("updated_at desc")
   end
 
@@ -32,7 +34,11 @@ class IssuesController < ApplicationController
   def set_issue_defaults(issue)
     #issue.reporter = current_user
     #issue.status = Status::OPEN
-    #issue.number = incremented number ToDo add number to issue
-    #issue.save
+    issue.index_number = issue.project.issues.count
+    issue.save
+  end
+
+  def touch_project(project_id)
+    Project.find(project_id).try(:touch) #ToDO exceptions
   end
 end

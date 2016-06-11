@@ -12,7 +12,7 @@
 
       <div class="issue-data-brief">
         <div class="issue-data-row">
-          <span class="issue-link"><%= "ToDo Link" %></span>
+          <span class="issue-link"><%= link_to("#{issue.project.key.upcase}-" + "#{issue.index_number}") %></span>
           <span class="issue-summary"><%= issue.summary %></span>
         </div>
 
