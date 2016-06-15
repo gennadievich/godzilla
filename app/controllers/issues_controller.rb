@@ -24,6 +24,11 @@ class IssuesController < ApplicationController
     end
   end
 
+  def show
+    @issue = Issue.find(params[:id])
+    @title = @issue.summary
+  end
+
   private
 
   def issue_params
