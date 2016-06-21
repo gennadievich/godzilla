@@ -20,6 +20,44 @@
       <div class="issue-details-heading">
         <h4>Details</h4>
       </div>
+      <div class="issue-details-content">
+        <table class="width-100">
+          <tr>
+            <td class="width-20">Type:</td>
+            <td><%= text_with_icon(@issue.issue_type.icon_path, 16, @issue.issue_type.name) %></td>
+            <td class="width-20">Status:</td>
+            <td>stat1</td>
+          </tr>
+
+          <tr>
+            <td class="width-20">Priority:</td>
+            <td><%= text_with_icon(@issue.issue_priority.icon_path, 16, @issue.issue_priority.name ) %></td>
+            <td class="width-20">Resolution</td>
+            <td>Unresolved</td>
+          </tr>
+
+          <tr>
+            <td class="width-20">Component/s:</td>
+            <td class=>None</td>
+          </tr>
+
+          <tr>
+            <td class="width-20">Labels:</td>
+            <td class=>None</td>
+          </tr>
+
+          <tr>
+            <td class="width-20">Epic Link:</td>
+            <td class=>None</td>
+          </tr>
+
+          <tr>
+            <td class="width-20">Sprint:</td>
+            <td class=>None</td>
+          </tr>
+
+        </table>
+      </div>
       <div class="issue-details-content"></div>
     </div>
   </div>
