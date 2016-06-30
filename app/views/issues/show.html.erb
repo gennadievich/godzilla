@@ -75,6 +75,62 @@
       <div class="issue-people-heading">
         <h4>People</h4>
       </div>
+      <div class="people-details-content">
+        <table class="width-100">
+          <tr>
+            <td class="width-20">Assignee:</td>
+            <td>Someone</td>
+          </tr>
+          <tr>
+            <td class="width-20">Reporter:</td>
+            <td>Me</td>
+          </tr>
+          <tr>
+            <td class="width-20">Votes:</td>
+            <td>0 Votes</td>
+          </tr>
+          <tr>
+            <td class="width-20">Watchers:</td>
+            <td>None</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="issue-dates-module">
+      <div class="issue-dates-heading">
+        <h4>Dates</h4>
+      </div>
+      <div class="dates-details-content">
+        <table class="width-100">
+          <tr>
+            <td class="width-20">Created:</td>
+            <td><%= @issue.created_at %></td>
+          </tr>
+          <tr>
+            <td class="width-20">Updated:</td>
+            <td><%= @issue.updated_at %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="issue-agile-module">
+      <div class="issue-agile-heading">
+        <h4>Agile</h4>
+      </div>
+      <div class="agile-details-content">
+        <table class="width-100">
+          <tr>
+            <td class="width-20">Active Sprint:</td>
+            <td>Sprint 1</td>
+          </tr>
+          <tr>
+            <td class="width-20">Completed Sprint:</td>
+            <td>None</td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </div>
